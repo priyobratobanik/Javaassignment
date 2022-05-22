@@ -1,0 +1,101 @@
+Ques :- What is the difference between the static and the non-static variables 
+of a class explain it with an example?
+
+Ans :- 
+There are three types of variables in Java:
+*Local Variables
+*Instance Variables
+*Static Variables
+
+The Local variables and Instance variables are together called Non-Static variables.
+Hence it can also be said that the Java variables can be divided into 2 categories
+static and non static variables:
+
+
+The main differences between static and non static variables are:
+
+~~~~~~~~~~~~~~~ STATIC VARIABLES ~~~~~~~~~~~~~~~~~
+	
+Static variables can be accessed using class name	
+Static variables can be accessed by static and non static methods	
+Static variables reduce the amount of memory used by a program.	
+Static variables are shared among all instances of a class.	
+Static variable is like a global variable and is available to all methods.	
+
+WHERE AS :-
+
+~~~~~~~~~~~~~~ NON STATIC VARIABLES ~~~~~~~~~~~~~~~
+
+Non static variables can be accessed using instance of a class
+Non static variables cannot be accessed inside a static method.
+Non static variables do not reduce the amount of memory used by a program
+Non static variables are specific to that instance of a class.
+Non static variable is like a local variable and they can be accessed through only instance of a class.
+
+EXAMPLE :-
+
+// Java program to demonstrate execution
+// of static blocks and variables
+
+class Test {
+    // static variable
+    static int a = m1();
+  
+    // static block
+    static
+    {
+        System.out.println("Inside static block");
+    }
+  
+    // static method
+    static int m1()
+    {
+        System.out.println("from m1");
+        return 20;
+    }
+  
+    // static method(main !!)
+    public static void main(String[] args)
+    {
+        System.out.println("Value of a : " + a);
+        System.out.println("from main");
+    }
+}
+
+OUTPUT -: 
+from m1
+Inside static block
+Value of a : 20
+from main
+
+
+==========================================================================
+
+
+// Java program to demonstrate
+// non-static variables
+  
+class Vmr {
+  
+    // non-static variable
+    int rj = 10;
+  
+    public static void main(String[] args)
+    {
+        // Instance created inorder to access
+        // a non static variable.
+        Vmr f = new Vmr();
+  
+        System.out.println("Non static variable"
+                           + " accessed using instance"
+                           + " of a class");
+        System.out.println("Non Static variable "
+                           + f.rj);
+    }
+}
+
+OUTPUT -: 
+Non static variable accessed using instance of a class.
+Non Static variable 10
+
+
