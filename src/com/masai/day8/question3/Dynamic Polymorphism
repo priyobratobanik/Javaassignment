@@ -1,0 +1,34 @@
+It is a process in which a call to an overridden method is resolved at runtime rather than
+compile-time.
+
+In this process, an overridden method is called through the reference variable of a
+superclass. The determination of the method to be called is based on the object being
+referred to by the reference variable.
+
+eg.
+
+Class A
+{
+	void print()
+	{
+		System.out.println("Class A");
+	}
+}
+
+Class B extends A
+{
+	void print()
+	{
+		System.out.println("Class B");
+	}
+}
+
+Class main
+{
+	public static void main(String[] args){
+		B b = new B();
+		b.print();	//class B print method will run because print method is overridden.
+		A a = new B();
+		a.print(); //class B print method will run because print method is overridden.
+	}
+}
