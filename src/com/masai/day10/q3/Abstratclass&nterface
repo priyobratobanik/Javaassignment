@@ -1,0 +1,65 @@
+Explain abstract class and interface with an example
+====================================================
+A class that is declared as abstract is known as an abstract class. It can have abstract
+and non-abstract methods. It needs to be extended and its method implemented. It
+cannot be instantiated.
+
+
+//Bike.java:
+abstract class Bike{
+abstract void run();
+}
+//Apache.java:
+class Apache extends Bike{
+void run(){
+System.out.println("running safely");
+}
+public static void main(String args[]){
+Day7: Access Modifiers, Packages, Abstract methods and Abstract class 12
+Bike bike1 = new Apache();
+bike1.run();
+}
+}
+
+An Interface in Java is defined as an abstract type used to specify the behaviour of a
+class. An interface in Java is a blueprint of a class. A Java interface contains static
+constants and abstract methods.
+The interface in Java is a mechanism to achieve 100% abstraction. There can be only
+abstract methods in the Java interface, not the method body. It is used to achieve
+abstraction and multiple inheritance in Java. In other words, you can say that
+interfaces can have abstract methods and variables. It cannot have a method body.
+ex->
+//Printer.java
+public interface Printer{
+int number=10;
+void print();
+}
+Java compiler converts it as follows:
+public interface Printer{
+Day8: Interface, Early and late binding, static and default method in java 8, Var-args, Enums 3
+public static final int number=10;
+public abstract void print();
+}
+//ConsolePrinter.java
+public class ConsolePrinter implements Printer{
+public void print(){
+System.out.println("Printing on the console.");
+}
+}
+//FilePrinter.java
+public class FilePrinter implements Printer{
+public void print(){
+System.out.println("Printing on the File.");
+}
+}
+//Main.java
+public class Main{
+public static void main(String args[]){
+ConsolePrinter cp = new ConsolePrinter();
+Printer p1 = new ConsolePrinter();
+Printer p2 = new FilePrinter();
+cp.print();
+p1.print();
+p2.print();
+}
+}
